@@ -5,8 +5,8 @@ import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 
-export async function getStaticProps() {
-  const allPostsData = await getSortedPostsData()
+export async function getStaticProps({ preview = false }) {
+  const allPostsData = await getSortedPostsData(preview)
   return {
     props: {
       allPostsData
